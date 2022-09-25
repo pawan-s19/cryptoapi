@@ -27,7 +27,10 @@
           <%cryptoData.forEach(function(elem){%>
           <tr>
             <th scope="row"><%=elem.rank%></th>
-            <td><%=elem.name%> (<%=elem.symbol%>)</td>
+            <td>
+              <img src="<%=elem.icon%>" style="height: 2.5vh" />
+              &nbsp;<%=elem.name%> (<%=elem.symbol%>)
+            </td>
             <td>
               <% if(elem.volume){ %> <%= parseFloat(elem.volume).toFixed(2)%> <%
               } else{ %> Currently Unavailable <% } %>
