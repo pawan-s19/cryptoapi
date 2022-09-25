@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>cryptoDetails</title>
+
+    <!-- CSS only -->
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="main table-responsive-xl">
+      <table class="table table-dark table-hover table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Rank</th>
+            <th scope="col">Name</th>
+            <th scope="col">Volume</th>
+            <th scope="col">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%cryptoData.forEach(function(elem){%>
+          <tr>
+            <th scope="row"><%=elem.rank%></th>
+            <td><%=elem.name%> (<%=elem.symbol%>)</td>
+            <td>
+              <% if(elem.volume){ %> <%= parseFloat(elem.volume).toFixed(2)%> <%
+              } else{ %> Currently Unavailable <% } %>
+            </td>
+            <td>₹ <%=elem.price.toFixed(2)%></td>
+          </tr>
+          <%})%>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
